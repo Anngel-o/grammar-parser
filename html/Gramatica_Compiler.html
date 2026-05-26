@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar Parser</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header>
+  <img
+    class="header-logo"
+    src="https://imgs.search.brave.com/AfxJLYWOv6zyVLQFQz_W6Eb2E5lCw-PX15YcowKgG5Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91YWNo/Lm14L2Fzc2V0cy9t/ZWRpYS9wdWJsaWNh/dGlvbnMvMjAyMi81/LzM3MTRfZmluZy9m/aW5nLWVzY3Vkby5z/dmc"
+    alt="Escudo UACH"
+  >
+  <div>
+    <h1>Grammar Parser</h1>
+    <p>Análisis léxico-sintáctico - Teoría de la Computación</p>
+  </div>
+
+</header>
+
+<main>
+
+  <!-- Gramática -->
+  <div class="card">
+    <div class="card-title">Gramática BNF</div>
+    <textarea id="grammarInput" rows="7"
+      placeholder="S -> E+S | E-S | E&#10;E -> F*E | F/E | F&#10;F -> N | -F | (S)&#10;N -> 0 | 1 | 2 | 3 | 4 | 5"
+      spellcheck="false"></textarea>
+    <div class="card-footer">
+      <button class="btn-link" id="loadExampleBtn">cargar ejemplo</button>
+      <button id="clearBtn">limpiar</button>
+      <button class="btn-primary" id="runParserBtn">Compilar</button>
+    </div>
+  </div>
+
+  <!-- Prueba de palabra -->
+  <div class="card">
+    <div class="card-title">Verificar palabra</div>
+    <textarea id="wordInput" rows="2"
+      placeholder="ej: 3+4"
+      spellcheck="false"></textarea>
+    <div class="card-footer">
+      <span class="input-hint">ingresa una palabra y verifica contra la gramática</span>
+      <button class="btn-primary" id="testWordBtn">Verificar</button>
+    </div>
+    <div id="resultArea"></div>
+
+  </div>
+
+  <!-- Log -->
+  <div class="card full-width">
+    <div class="card-title">Log</div>
+    <div class="log-body" id="logBody">
+      <div class="log-entry"><span class="log-time">--:--:--</span><span class="log-info">sistema listo</span></div>
+    </div>
+  </div>
+
+  <div class="card full-width">
+    <div class="card-title">
+      Código Python generado
+      <button class="copy-btn" id="copyBtn">copiar</button>
+    </div>
+    <div class="code-wrap">
+      <div id="codeDisplay" class="empty-msg">el código aparecerá aquí después de compilar</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p><strong>Jose Angel Ortiz Meraz</strong> [353195]</p>
+  <p><strong>Luz Mariam Garcia Castillo</strong> [348409]</p>
+  <p>Teoria de la Computacion, Ingenieria en Ciencias de la Computacion, FING UACH.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
+
